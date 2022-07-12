@@ -1,10 +1,10 @@
 # Deniz Erisgen ©
 
-def make_list_from_file(filename: str) -> tuple:
+def make_list_from_file(filename: str) -> dict:
     """
 reads words from files with a word per line
     :param filename: filename string from working dir
-    :return: words in a tuple
+    :return: words in a dict
     """
     read_list = []
     with open(filename) as fin:
@@ -13,8 +13,7 @@ reads words from files with a word per line
             cleaner = str(line.rsplit()[0])
             read_list.append(cleaner)
             line = fin.readline()
-    return tuple(read_list)
-
+    return dict.fromkeys(read_list)
 
 def make_list_from_file_for_db(filename: str) -> tuple:
     """
