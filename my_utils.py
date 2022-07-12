@@ -1,6 +1,6 @@
 # Deniz Erisgen ©
 
-def make_list_from_file(filename: str) -> dict:
+def make_list_from_file(filename: str) -> ():
     """
 reads words from files with a word per line
     :param filename: filename string from working dir
@@ -13,7 +13,8 @@ reads words from files with a word per line
             cleaner = str(line.rsplit()[0])
             read_list.append(cleaner)
             line = fin.readline()
-    return dict.fromkeys(read_list)
+    return tuple(read_list)
+
 
 def make_list_from_file_for_db(filename: str) -> tuple:
     """
